@@ -15,7 +15,6 @@ import java.awt.*;
 @Builder
 @Entity
 @Table(name = "TB_LIVROS")
-@ApplicationScope
 public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
