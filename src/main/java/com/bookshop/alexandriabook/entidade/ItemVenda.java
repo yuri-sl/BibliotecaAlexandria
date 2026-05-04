@@ -3,12 +3,16 @@ package com.bookshop.alexandriabook.entidade;
 import com.bookshop.alexandriabook.dto.LivroResponseDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Data
 @Entity
 @Table(name = "tb_itens_venda")
 public class ItemVenda {

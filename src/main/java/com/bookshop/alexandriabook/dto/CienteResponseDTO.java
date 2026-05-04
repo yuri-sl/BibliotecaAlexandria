@@ -9,16 +9,16 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Data
-
-
-public class ClienteCreateDTO {
+@Builder
+public class CienteResponseDTO {
+    private Long id;
     private String email;
     private String password;
 
-    public static ClienteCreateDTO converterEntidadeDTO(Cliente cliente){
-        return  ClienteCreateDTO.builder()
+    public static CienteResponseDTO converterEntidadeDTO(Cliente cliente){
+        return  CienteResponseDTO.builder()
+                .id(cliente.getId())
                 .email(cliente.getEmail())
                 .password(cliente.getPassword())
                 .build();

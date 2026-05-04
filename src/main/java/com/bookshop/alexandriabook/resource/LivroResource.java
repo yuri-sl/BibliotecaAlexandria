@@ -33,7 +33,7 @@ public class LivroResource {
     @GetMapping("/{idLivro}")
     public ResponseEntity<?> fetchBookById(@PathVariable("idLivro") Long idLivro){
         try{
-            LivroResponseDTO livroEncontrado = livroService.buscarLivroPorId(idLivro);
+            LivroResponseDTO livroEncontrado = livroService.buscarLivroDTOPorId(idLivro);
             return ResponseEntity.status(200).body(livroEncontrado);
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(400).body("Não foi encontrado um livro");

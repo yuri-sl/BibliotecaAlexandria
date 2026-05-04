@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.awt.*;
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,6 +24,7 @@ public class LivroResponseDTO {
     private String genero;
     private String descricao;
     private Integer estoque;
+    private BigDecimal precoAtualizado;
 
     public static LivroResponseDTO converterEntidadeDTO(Livro livro){
         return LivroResponseDTO.builder()
@@ -33,6 +35,7 @@ public class LivroResponseDTO {
                 .genero(livro.getGenero())
                 .descricao(livro.getDescricao())
                 .estoque(livro.getEstoque())
+                .precoAtualizado(livro.getPrecoAtualizado())
                 .build();
     }
 }

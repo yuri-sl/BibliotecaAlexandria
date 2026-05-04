@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.web.context.annotation.ApplicationScope;
 
 import java.awt.*;
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,7 +20,7 @@ public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column()
+    @Column
     private String titulo;
     @Column
     private String autor;
@@ -31,5 +32,6 @@ public class Livro {
     private double preco;
     @Column
     private Integer estoque;
+    private BigDecimal precoAtualizado;
 
 }

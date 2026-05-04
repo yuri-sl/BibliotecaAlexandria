@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.web.context.annotation.ApplicationScope;
 
 import java.awt.*;
+import java.math.BigDecimal;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,4 +22,5 @@ public class LivroCreateDTO {
     private String genero;
     private double preco;
     private Integer estoque;
+    private BigDecimal precoAtualizado;
 }

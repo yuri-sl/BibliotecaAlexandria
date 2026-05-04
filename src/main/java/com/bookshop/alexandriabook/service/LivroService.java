@@ -31,11 +31,15 @@ public class LivroService {
     }
 
 
-    public LivroResponseDTO buscarLivroPorId(Long livroId){
+    public LivroResponseDTO buscarLivroDTOPorId(Long livroId){
         var livroDTO = repository.findById(livroId).orElseThrow(() -> new EntityNotFoundException("Livro não encontrado"));
         return LivroResponseDTO.converterEntidadeDTO(livroDTO);
     }
 
+    public Livro buscarDadosLivroPorId(Long livroId){
+        var livroAchado = repository.findById(livroId).orElseThrow(() -> new EntityNotFoundException("Livro não encontrado"));
+        return livroAchado;
+    }
     public LivroResponseDTO criarLivro(LivroCreateDTO dados) throws AlexandriaBookException {
         Livro livro = Livro.builder()
                 .titulo(dados.getTitulo())
@@ -74,6 +78,7 @@ public class LivroService {
         livro.setDescricao(dados.getDescricao());
         livro.setGenero(dados.getGenero());
         livro.setPreco(dados.getPreco());
+        livro.setPrecoAtualizado(dados.getPrecoAtualizado());
 
 
         repository.save(livro);
@@ -81,6 +86,18 @@ public class LivroService {
 
         return respostaLivro;
     }
+
+    public List<Livro> buscarDadosLivros(List<Long> listaIdsLivros){
+        List<Livro> listaLivros = new ArrayList<>();
+
+        for(Long id: listaIdsLivros){
+            Livro livro = buscarDadosLivroPorId(id);
+            listaLivros.add(livro);
+        }
+        return listaLivros;
+    }
+
+
 
 
 
