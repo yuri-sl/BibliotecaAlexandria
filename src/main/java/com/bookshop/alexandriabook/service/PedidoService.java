@@ -3,6 +3,7 @@ package com.bookshop.alexandriabook.service;
 
 import com.bookshop.alexandriabook.dto.CriarPedidoRequestDTO;
 import com.bookshop.alexandriabook.dto.CriarPedidoResponseDTO;
+import com.bookshop.alexandriabook.dto.PedidoResponseDTO;
 import com.bookshop.alexandriabook.entidade.Cliente;
 import com.bookshop.alexandriabook.entidade.ItemVenda;
 import com.bookshop.alexandriabook.entidade.Livro;
@@ -99,6 +100,13 @@ public class PedidoService {
         return CriarPedidoResponseDTO.converterEntidadeDTO(carrinho);
     }
 
+//    public PedidoResponseDTO encontrarPedidoPorId(Long idPedido){
+//        var pedido = pedidoRepository.findById(idPedido).orElseThrow(EntityNotFoundException::new);
+//
+//        return PedidoResponseDTO.converterEntidadeDTO(pedido);
+//
+//
+//    }
 
 
 }

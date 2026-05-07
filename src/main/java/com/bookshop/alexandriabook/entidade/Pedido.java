@@ -22,7 +22,8 @@ public class Pedido {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private BigDecimal precoTotal;
-    private LocalDateTime dataVenda;
+    @Builder.Default
+    private LocalDateTime dataVenda = null;
 
     @OneToMany(mappedBy = "pedido")//Mapeado pelo campo pedido na entidade de ItemVenda
     private List<ItemVenda> itens;

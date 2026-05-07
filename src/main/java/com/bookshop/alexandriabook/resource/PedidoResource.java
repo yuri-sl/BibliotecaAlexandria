@@ -49,4 +49,13 @@ public class PedidoResource {
         }
 
     }
+
+    @GetMapping("/{idPedido}")
+    public ResponseEntity<?> buscarPedido(@PathVariable("idPedido") Long idPedido){
+        try{
+            return ResponseEntity.status(201).body();
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(400).body(e.getMessage());
+        }
+    }
 }
