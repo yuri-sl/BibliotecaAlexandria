@@ -76,4 +76,13 @@ public class ClienteResource {
             return ResponseEntity.status(400).body(e.getMessage());
         }
     }
+
+    @GetMapping("/{idCliente}")
+    public ResponseEntity<?> buscarClienteById(@PathVariable("idCliente")Long idCliente){
+        try{
+            return ResponseEntity.status(200).body(clienteService.buscarClientePorId(idCliente));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(400).body(e.getMessage());
+        }
+    }
 }

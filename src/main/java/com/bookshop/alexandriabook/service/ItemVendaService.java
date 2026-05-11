@@ -18,9 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class ItemVendaService {
-    final ItemVendaRepository itemVendaRepository;
     final PedidoRepository pedidoRepository;
-    final PedidoService pedidoService;
 
 
     public ItemVenda transformarItemVenda(Pedido pedido, Livro livro,Integer quantidadeComprada){

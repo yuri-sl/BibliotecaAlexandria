@@ -75,4 +75,8 @@ public class ClienteService {
         return clienteRepository.findAll().stream().toList();
     }
 
+    public Cliente buscarClientePorId(Long idCliente){
+        return clienteRepository.getClienteById(idCliente);
+    }
+
 }
