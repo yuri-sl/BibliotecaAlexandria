@@ -23,6 +23,7 @@ public class ClienteService {
     public String criarCliente(ClienteCreateDTO dados){
         Cliente cliente = Cliente.builder()
                         .email(dados.getEmail())
+                        .username(dados.getUsername())
                         .password(dados.getPassword())
                 .build();
         clienteRepository.save(cliente);

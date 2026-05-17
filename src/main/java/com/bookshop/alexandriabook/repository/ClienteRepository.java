@@ -9,4 +9,6 @@ public interface ClienteRepository extends JpaRepository<Cliente,Long> {
     Object getAllById(Long id);
 
     Long id(Long id);
+
+    Cliente findClienteByUsername(String username);
 }
